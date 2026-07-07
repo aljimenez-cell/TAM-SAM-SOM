@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora TAM SAM SOM & Chatbot</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-4">Datos del Mercado</h2>
+            <form id="marketForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium">Nº Clientes Totales en el Mundo (TAM)</label>
+                    <input type="number" id="tamClientes" class="w-full p-2 border rounded" value="100000">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">Nº Clientes en tu Región (SAM)</label>
+                    <input type="number" id="samClientes" class="w-full p-2 border rounded" value="10000">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">Nº Clientes que puedes captar (SOM)</label>
+                    <input type="number" id="somClientes" class="w-full p-2 border rounded" value="1000">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">Precio Anual del Producto ($)</label>
+                    <input type="number" id="precio" class="w-full p-2 border rounded" value="100">
+                </div>
+                <button type="button" onclick="calcularMercado()" class="w-full bg-blue-600 text-white p-2 rounded font-bold hover:bg-blue-700">Calcular</button>
+            </form>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
+            <h2 class="text-xl font-bold mb-4">Resultados Cuantitativos</h2>
+            <div class="relative w-full h-64">
+                <canvas id="marketChart"></canvas>
+            </div>
+            <div id="resultadosTexto" class="mt-4 text-sm space-y-1 text-gray-700"></div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col h-[500px]">
+            <h2 class="text-xl font-bold mb-2">Asistente de Mercado</h2>
+            <div id="chatBox" class="flex-1 overflow-y-auto p-2 border rounded bg-gray-50 space-y-2 text-sm mb-4">
+                <p class="text-gray-500 italic">¡Hola! Pregúntame dónde buscar datos de tu industria o qué mercados potenciales explorar...</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="text" id="chatInput" placeholder="¿Dónde busco datos de mi sector?" class="flex-1 p-2 border rounded">
+                <button onclick="enviarMensaje()" class="bg-green-600 text-white px-4 py-2 rounded font-bold">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
