@@ -1,0 +1,6 @@
+{
+  "name": "Calculadora TAM SAM SOM & Consultor SaaS",
+  "description": "Plataforma interactiva para calcular TAM, SAM y SOM usando metodologías Top-Down y Bottom-Up, con desgloses de fórmulas y un consultor estratégico de IA integrado con búsqueda web en tiempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
